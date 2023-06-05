@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ededed;
+}
+
+h1 {
+  margin-top: 3vw;
+  margin-bottom: 0.5vw;
+
+  color: #102a42;
+
+  letter-spacing: 4px;
+  font-size: 2.75rem;
+}
+
+hr {
+  width: 5.25rem;
+  height: 0.25rem;
+
+  background-color: #c59d5f;
+  border: transparent;
+}
+
+.filters-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  margin-bottom: 3.5vw;
+  margin-top: 1.5vw;
+}
+
+.filters-container button {
+  padding: 0.4rem 0.75rem;
+
+  border-radius: 10px;
+  border-color: #c59d5f;
+
+  background-color: transparent;
+  color: #c59d5f;
+
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 2px;
+
+  transition: 0.4s ease-in-out;
+}
+
+.filters-container button:hover {
+  background-color: #c59d5f;
+  color: #ededed;
+}
+
+.items-container {
+  margin: 0 auto;
+
+  width: 90vw;
+  max-width: 1240px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 3rem;
+}
+
+.food {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 0.25fr 1fr;
+  max-width: 40rem;
+}
+
+.food img {
+  width: 230px;
+  height: 150px;
+
+  grid-area: span 2;
+
+  margin-right: 2rem;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+  border: 4px solid #c59d5f;
+}
+
+.food header {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px dotted #617d98;
+}
+
+.food header h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+
+  letter-spacing: 3px;
+}
+
+.food header .price {
+  color: #c59d5f;
+}
+
+.food .description {
+  padding-top: 1rem;
+  padding-right: 2rem;
+
+  line-height: 1.5rem;
+
+  font-size: 0.9rem;
+
+  color: #617d98;
+}
+
+@media screen and (max-width: 1200px) {
+  .items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1170px;
+  }
+
+  .food {
+    grid-template-columns: 1fr 385px;
+  }
+
+  .food img {
+    width: 230px;
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .food {
+    grid-template-columns: 400px;
+    gap: 1rem 2rem;
+  }
+
+  .food img {
+    width: 100%;
+  }
+
+  .food header {
+    width: 100%;
+    height: 30px;
+  }
+
+  .food .description {
+    padding: 0;
+  }
+}
